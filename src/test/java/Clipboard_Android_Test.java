@@ -1,6 +1,8 @@
-import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -8,24 +10,22 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Send_SMS_Test {
+public class Clipboard_Android_Test {
 
-    public AppiumDriver driver;
+    private AndroidDriver<WebElement> driver;
 
     @BeforeTest
     public void setUp() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("platformVersion", "9.0");
+        capabilities.setCapability("platformVersion", "8.0");
         capabilities.setCapability("deviceName", "Android Emulator");
-        capabilities.setCapability("appPackage",   "com.google.android.apps.messaging");
-        capabilities.setCapability("appActivity",   ".ui.ConversationListActivity");
-
+        capabilities.setCapability("app", System.getProperty("user.dir") + "/apps/selendroid.apk");
         driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), capabilities);
     }
 
     @Test
-    public void send_SMS() {
+    public void clipboard_test() {
     }
 
     @AfterTest
