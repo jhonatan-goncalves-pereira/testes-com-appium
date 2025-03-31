@@ -52,23 +52,77 @@ Este guia fornece um passo a passo detalhado para configurar um ambiente de dese
 
 ## ⚙️ Configuração do Ambiente
 
-### 🔹 Configurar o ANDROID_HOME
-- Adicione a variável de ambiente `ANDROID_HOME` apontando para o diretório do SDK do Android instalado pelo Android Studio.
-- Exemplo:
-  ```sh
-  export ANDROID_HOME=/Users/<seu_usuario>/Library/Android/sdk
-  export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
-  ```
-- [Guia de Configuração Detalhada](https://youtu.be/yukIc-a5z5k)
+### 1. Configurar `ANDROID_HOME`
+- **Problema**: A variável de ambiente `ANDROID_HOME` não está definida.
+- **Solução**:
+  - Localize o diretório onde o SDK do Android está instalado. Normalmente, ele fica em:
+    - **Windows**: `C:\Users\<seu_usuario>\AppData\Local\Android\Sdk`
+    - **macOS/Linux**: `/Users/<seu_usuario>/Library/Android/sdk`
+  - Configure a variável de ambiente:
+    - **Windows**:
+      1. Abra o menu **Iniciar**, pesquise por "Variáveis de Ambiente" e selecione **Editar as variáveis de ambiente do sistema**.
+      2. Clique em **Variáveis de Ambiente**.
+      3. Em **Variáveis do Sistema**, clique em **Nova** e adicione:
+         ```
+         Nome da variável: ANDROID_HOME
+         Valor da variável: C:\Users\<seu_usuario>\AppData\Local\Android\Sdk
+         ```
+      4. Adicione os seguintes caminhos ao `Path`:
+         ```
+         %ANDROID_HOME%\platform-tools
+         %ANDROID_HOME%\tools
+         %ANDROID_HOME%\tools\bin
+         ```
+    - **macOS/Linux**:
+      Adicione ao seu arquivo `~/.bashrc`, `~/.zshrc` ou equivalente:
+      ```sh
+      export ANDROID_HOME=/Users/<seu_usuario>/Library/Android/sdk
+      export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
+      ```
+      Depois, execute:
+      ```sh
+      source ~/.bashrc
+      ```
+  - Verifique se está configurado corretamente:
+    ```sh
+    echo $ANDROID_HOME
+    adb devices
+    ```
 
-### 🔹 Configurar o JAVA_HOME
-- Adicione a variável de ambiente `JAVA_HOME` apontando para o diretório da instalação do Java.
-- Exemplo:
-  ```sh
-  export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk/Contents/Home
-  export PATH=$JAVA_HOME/bin:$PATH
-  ```
-- [Guia de Configuração Detalhada](https://youtu.be/gIFgBMZX6e8)
+---
+
+### 2. Configurar `JAVA_HOME`
+- **Problema**: A variável de ambiente `JAVA_HOME` não está definida.
+- **Solução**:
+  - Localize o diretório onde o JDK está instalado. Por exemplo:
+    - **Windows**: `C:\Program Files\Java\jdk-<versão>`
+    - **macOS/Linux**: `/Library/Java/JavaVirtualMachines/jdk-<versão>/Contents/Home`
+  - Configure a variável de ambiente:
+    - **Windows**:
+      1. Siga os mesmos passos para editar as **Variáveis de Ambiente**.
+      2. Em **Variáveis do Sistema**, clique em **Nova** e adicione:
+         ```
+         Nome da variável: JAVA_HOME
+         Valor da variável: C:\Program Files\Java\jdk-<versão>
+         ```
+      3. Adicione `%JAVA_HOME%\bin` ao `Path`.
+    - **macOS/Linux**:
+      Adicione ao seu arquivo `~/.bashrc`, `~/.zshrc` ou equivalente:
+      ```sh
+      export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-<versão>/Contents/Home
+      export PATH=$JAVA_HOME/bin:$PATH
+      ```
+      Depois, execute:
+      ```sh
+      source ~/.bashrc
+      ```
+  - Verifique se está configurado corretamente:
+    ```sh
+    echo $JAVA_HOME
+    java -version
+    ```
+
+---
 
 ### 🔹 Configurar Emuladores
 - Abra o Android Studio, acesse **AVD Manager** e configure um emulador de sua preferência.
