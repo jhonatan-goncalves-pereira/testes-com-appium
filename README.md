@@ -79,3 +79,15 @@ Depois disso, reinicie o Appium e o emulador.
 
 ---
 
+## 🛠️ Organização do diretório
+
+Os testes realizados ao longo do curso seguem uma estrutura  dentro de tests seguem ordenados conforme a realização do curso na plataforma https://testautomationu.applitools.com/
+
+**Mobile Testing with Appium and Java: From Setup to Execution (terça-feira às 0900** - tests_course_01
+● Link: https://testautomationu.applitools.com/appium-java-tutorial-1/
+
+**Mobile Testing with Appium and Java: Advanced Techniques (quinta-feira às 0900** - tests_course_02
+● Link: https://testautomationu.applitools.com/appium-java-tutorial-2/
+
+**Automated Visual Testing with Appium (sexta-feira às 0900** - tests_course_03
+● Link: https://testautomationu.applitools.com/appium-visual-testing/

@@ -1,18 +1,16 @@
+package tests_course_01;
+
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.By;
+import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.io.File;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Sending_Photos_Android_Test {
+public class Scroll_Android_Test {
 
     public AndroidDriver driver;
 
@@ -20,17 +18,16 @@ public class Sending_Photos_Android_Test {
     public void setUp() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("platformVersion", "8.0");
+        capabilities.setCapability("platformVersion", "9.0");
         capabilities.setCapability("deviceName", "Android Emulator");
-        capabilities.setCapability("appPackage", "com.google.android.apps.photos");
-        capabilities.setCapability("appActivity", ".home.HomeActivity");
-
-        driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), capabilities);
+        capabilities.setCapability("app", System.getProperty("user.dir") + "/apps/ApiDemos.apk");
+        driver = new AndroidDriver<>(new URL("http://localhost:4723"), capabilities);
     }
 
     @Test
-    public void send_Photo() {
-
+    public void scroll_test() {
+        AndroidElement views =
+                (AndroidElement) driver.findElementByAccessibilityId("Views");
     }
 
     @AfterTest
