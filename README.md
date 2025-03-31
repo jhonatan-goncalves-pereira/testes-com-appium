@@ -171,6 +171,7 @@ Os testes realizados ao longo do curso seguem uma estrutura dentro de `tests`, o
 2. **Mobile Testing with Appium and Java: Advanced Techniques**
   - Diretório: `tests_course_02`
   - Link: [Curso 2](https://testautomationu.applitools.com/appium-java-tutorial-2/)
+  - Repositório complementar da Pipeline: https://github.com/jhonatan-goncalves-pereira/appiumGitHubActions
 
 3. **Automated Visual Testing with Appium**
   - Diretório: `tests_course_03`
