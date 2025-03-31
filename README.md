@@ -1,7 +1,3 @@
-Aqui está a versão corrigida e aprimorada do seu README, com links diretos para downloads, instruções adicionais sobre o Appium Doctor e melhorias na organização geral. Essa versão segue boas práticas para um guia de configuração profissional e claro.
-
----
-
 # 📌 Configuração do Ambiente de Desenvolvimento
 
 Este guia fornece um passo a passo detalhado para configurar um ambiente de desenvolvimento robusto para automação de testes em dispositivos Android utilizando **Appium**.
@@ -187,7 +183,3 @@ Os testes realizados ao longo do curso seguem uma estrutura dentro de `tests`, o
 - [Documentação oficial do Appium](https://appium.io/docs/en/about-appium/overview/)
 - [Guia de Instalação do ADB](https://developer.android.com/studio/command-line/adb)
 - [Repositório oficial do Appium no GitHub](https://github.com/appium/appium)
-
----
-
-Com essas correções e adições, o README agora está mais completo, fácil de seguir e inclui todos os links e ferramentas necessárias para configurar um ambiente de automação robusto com Appium.
